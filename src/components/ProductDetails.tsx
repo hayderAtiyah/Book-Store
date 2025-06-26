@@ -10,7 +10,7 @@ function ProductDetails() {
       <div className="grid   gap-4 p-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         {productsContents.map((item) => (
           <BookCard
-            key={item.id}
+            id={item.id}
             imgPath={item.image}
             title={item.title}
             price={item.price}

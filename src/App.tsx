@@ -7,6 +7,7 @@ import ProductDetails from "./components/ProductDetails";
 import About from "./components/About";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
+import BookSeeMore from "./components/BookSeeMore";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/categories/:category" element={<ProductDetails />} />
+        <Route path="/BookSeeMore" element={<BookSeeMore />} />
       </Routes>
     </BrowserRouter>
   );
