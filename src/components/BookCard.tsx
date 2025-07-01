@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function BookCard({ id, imgPath, title, description, price }) {
   const navigate = useNavigate();
   return (
-    <div className="bg-gray-200 p-12  rounded-lg hover:scale-105 transition duration-300">
+    <div className="flex flex-col h-full justify-between bg-gray-200 p-12  rounded-lg hover:scale-105 transition duration-300">
       <img
         src={imgPath}
         alt="book cover"
@@ -16,6 +16,7 @@ function BookCard({ id, imgPath, title, description, price }) {
         <h2 className="font-bold mr-8"> {title}</h2>
         <h3 className=""> ${price}</h3>
       </div>
+
       <div className="flex  justify-center gap-6 mt-8 ">
         <Button
           variant="contained"

@@ -2,6 +2,9 @@ import React from "react";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
 import ProductDetails from "./ProductDetails";
 import { useState } from "react";
+import { MyContext } from "../App";
+import { useContext } from "react";
+
 import {
   Menu,
   MenuButton,
@@ -10,15 +13,13 @@ import {
   Transition,
 } from "@headlessui/react";
 import { Link } from "react-router-dom";
-
 const categories = [
   "All",
   "Programming",
   "Career",
   "Improvement",
   "Design",
-  "Business",
-  "Creativity",
+
   "Productivity",
   "Motivation",
   "Finance",
@@ -26,21 +27,13 @@ const categories = [
   "Health",
   "Philosophy",
   "Leadership",
-  "Communication",
-  "History",
-  "Psychology",
-  "Education",
   "Relationships",
-  "Entrepreneurship",
-  "Biography",
-  "Cooking",
-  "Fitness",
-  "Art",
-  "Marketing",
-  "Mindfulness",
   "Gym",
+  "Other",
 ];
-function CategoriesDropDown(path) {
+function CategoriesDropDown() {
+  const { chosenCat, setChosenCat } = useContext(MyContext);
+
   return (
     <Menu as="div" className="relative inline-block text-left group">
       <div>
@@ -65,6 +58,7 @@ function CategoriesDropDown(path) {
                   to={`/categories/${item}`}
                   className="block px-4 py-2 text-sm text-black-900 data-[focus]:bg-gray-100 rounded-lg data-[focus]:text-black-900 data-[focus]:outline-none"
                   key={item}
+                  onClick={() => setChosenCat(`${item}`)}
                 >
                   {item}
                 </Link>
@@ -76,5 +70,4 @@ function CategoriesDropDown(path) {
     </Menu>
   );
 }
-
 export default CategoriesDropDown;
