@@ -21,7 +21,10 @@ function BookCard({ id, imgPath, title, description, price }) {
         <Button
           variant="contained"
           className="categoryButton"
-          onClick={() => navigate("/BookSeeMore", { state: { id } })}
+          onClick={() => {
+            navigate("/BookSeeMore", { state: { id: id } });
+            console.log("id clicked was: " + id);
+          }}
         >
           See details
         </Button>

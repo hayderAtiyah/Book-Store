@@ -98,3 +98,112 @@ button.categoryButton:hover {
     letter-spacing: normal;
   }
 }
+
+@keyframes crazy-anim {
+  0% {
+    transform: scale(1) rotate(0deg);
+    color: #e11d48;
+  }
+  10% {
+    transform: scale(1.1) rotate(8deg);
+    color: #f59e42;
+  }
+  20% {
+    transform: scale(0.9) rotate(-8deg);
+    color: #059669;
+  }
+  30% {
+    transform: scale(1.2) rotate(12deg);
+    color: #2563eb;
+  }
+  40% {
+    transform: scale(0.8) rotate(-12deg);
+    color: #a21caf;
+  }
+  50% {
+    transform: scale(1.3) rotate(18deg);
+    color: #db2777;
+  }
+  60% {
+    transform: scale(0.85) rotate(-18deg);
+    color: #e11d48;
+  }
+  70% {
+    transform: scale(1.1) rotate(8deg);
+    color: #f59e42;
+  }
+  80% {
+    transform: scale(0.95) rotate(-8deg);
+    color: #059669;
+  }
+  90% {
+    transform: scale(1.05) rotate(0deg);
+    color: #2563eb;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    color: #e11d48;
+  }
+}
+
+.crazy-anim {
+  animation: crazy-anim 1.5s cubic-bezier(0.4, 0, 0.6, 1) 1;
+}
+
+@keyframes crazy-purple {
+  0% {
+    color: #a78bfa;
+    letter-spacing: 0.4em;
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    color: #7c3aed;
+    letter-spacing: 0.05em;
+    transform: scale(1.2) rotate(8deg);
+  }
+  60% {
+    color: #c4b5fd;
+    letter-spacing: 0.2em;
+    transform: scale(0.9) rotate(-8deg);
+  }
+  100% {
+    color: #a78bfa;
+    letter-spacing: 0.15em;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.crazy-purple {
+  animation: crazy-purple 1.6s cubic-bezier(0.4, 0, 0.6, 1) 1;
+}
+.aboutHeading {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.3em;
+  background: linear-gradient(90deg, #a259ff, #6d28d9 70%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 8px rgba(162, 89, 255, 0.25),
+    0 4px 24px rgba(109, 40, 217, 0.15);
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+  animation: waveText 1.5s linear 1; /* Runs once */
+}
+
+@keyframes waveText {
+  0% {
+    letter-spacing: 0.3em;
+    transform: scaleY(1);
+  }
+  50% {
+    letter-spacing: 0.5em;
+    transform: scaleY(1.15);
+  }
+  100% {
+    letter-spacing: 0.3em;
+    transform: scaleY(1);
+  }
+}

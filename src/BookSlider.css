@@ -56,7 +56,6 @@
 
 .skill--box > img {
   height: 150px;
-  pointer-events: none;
 }
 
 .skill--box h3 {

@@ -10,6 +10,9 @@ export default function BookSeeMore() {
   const { id } = location.state;
   const [chosenCat, setChosenCat] = useState("All");
   const navigate = useNavigate();
+
+  const foundUser = productsContent.find((user) => user.id === id);
+
   return (
     <div className="">
       <Button
@@ -22,19 +25,19 @@ export default function BookSeeMore() {
       <div className="w-full  mx-auto max-w-xs  md:max-w-md lg:max-w-lg flex flex-col items-center justify-center  gap-10 ">
         <h1 className="font-extrabold text-md md:text-lg lg:text-3xl mt-12 pro-animate-insane">
           {" "}
-          {productsContent[id - 1].title}
+          {foundUser?.title}
         </h1>
 
         <div className="flex flex-col gap-2 items-center ">
           <img
-            src={productsContent[id - 1].image}
+            src={foundUser?.image}
             alt="book cover picture"
             className="w-full max-w-xs md:max-w-md lg:max-w-lg object-contain rounded-2xl shadow-xl border-4 border-gray-200 hover:scale-105 hover:shadow-2xl transition-transform duration-300"
           />
           <p className="text-base md:text-lg text-black bg- bg-[#e7dce8] rounded-lg p-4 shadow-md  leading-relaxed">
-            {productsContent[id - 1].description}
+            {foundUser?.description}
           </p>{" "}
-          <h2 className="font-bold">${productsContent[id - 1].price}</h2>
+          <h2 className="font-bold">${foundUser?.price}</h2>
           <Button variant="contained" className="categoryButton w-full">
             Add to cart
           </Button>
